@@ -36,7 +36,13 @@ public class App {
                     System.out.println("enter name of student");
                     student.setName(sc.nextLine());
                     student.setAge(handleException.getIntegerInput(sc,"enter age"));
-                    if(studentServicesImpli.save(student)){
+                    System.out.println("\n\nEnter marks details\n\n");
+                    Marks marks=context.getBean(Marks.class);
+                    marks.setId(handleException.getIntegerInput(sc,"enter marks id"));
+                    System.out.println("enter subject name");
+                    marks.setSubject(sc.nextLine());
+                    marks.setMarks(handleException.getIntegerInput(sc,"enter marks"));
+                    if(studentServicesImpli.save(student,marks)){
                         System.out.println("student saved success");
                     }else {
                         System.out.println("some problem is there ");
@@ -86,3 +92,13 @@ public class App {
         session.close();
         sessionFactory.close();
         context.close();*/
+
+
+
+/*
+* git init
+git add .
+git commit -m "Initial commit - Hibernate Practice Project"
+git branch -M main
+git remote add origin https://github.com/SanketWalave/InstitueManagement_Hibernate.git
+git push -u origin main*/
